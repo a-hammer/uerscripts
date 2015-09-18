@@ -2,7 +2,7 @@
 // @name         Wikipedia - Toggle Sidebar
 // @description  Adds a small button to hide or show the sidebar. Makes reading easier.
 //               (Sidebar is hidden by default. This can be changed in the preferences.)
-// @version      0.1
+// @version      0.1.1
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT
@@ -11,7 +11,7 @@
 // @downloadURL  https://github.com/a-hammer/uerscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
 // @match        *.wikipedia.org/wiki/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
-// @run-at       document-start
+// @run-at       document-body
 // @grant        none
 // ==/UserScript==
 
@@ -91,7 +91,7 @@
             sidebar = $('#mw-panel'),
             mainContent = $('#content');
 
-        // In case 'arriveById' did not catch the elements (unlikely), hide now.
+        // In case 'arriveById' did not catch the elements, hide now.
         if (prefs.hiddenByDefault) {
             sidebar.hide();
             mainContent.addClass('snap-left');
