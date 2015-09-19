@@ -6,9 +6,9 @@
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/uerscripts/tree/master/Wikipedia_ToggleSidebar
-// @updateURL    https://github.com/a-hammer/uerscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
-// @downloadURL  https://github.com/a-hammer/uerscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
+// @homepage     https://github.com/a-hammer/userscripts/tree/master/Wikipedia_ToggleSidebar
+// @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
+// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
 // @match        *.wikipedia.org/wiki/*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
 // @run-at       document-body
