@@ -2,7 +2,7 @@
 // @name         Wikipedia - Toggle Sidebar
 // @description  Adds a small button to hide or show the sidebar. Makes reading easier.
 //               (Sidebar is hidden by default. This can be changed in the preferences.)
-// @version      0.1.1
+// @version      0.1.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT
@@ -71,17 +71,16 @@
         '
     ;
 
-    // Inject CSS at document start
     $('head').append('<style>' + css + '</style>');
 
     if (prefs.hiddenByDefault) {
         // Hide as soon as elements arrive to avoid layout jumping
         document.body
             .arriveById('mw-panel', function() {
-                $(this).toggle();
+                $(this).hide();
             })
             .arriveById('content', function() {
-                $(this).toggleClass('snap-left');
+                $(this).addClass('snap-left');
             });
     }
 
@@ -91,7 +90,7 @@
             sidebar = $('#mw-panel'),
             mainContent = $('#content');
 
-        // In case 'arriveById' did not catch the elements, hide now.
+        // 'document.ready' can fire before 'arriveById'. Double-check.
         if (prefs.hiddenByDefault) {
             sidebar.hide();
             mainContent.addClass('snap-left');
