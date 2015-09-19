@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Quiet Wiki
 // @description  Makes links stand out less in Wiki articles. Useful if you fall into rabbit holes when you just wanted to focus on a single article.
-// @version      0.0.1
+// @version      0.0.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT

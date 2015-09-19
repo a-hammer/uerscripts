@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Favorite Languages
-// @description  Easily access Wikipedia pages in your favorite languages.
-//               Add languages below.
-// @version      0.0.1
+// @description  Easily access Wikipedia pages in your favorite languages. Setup languages below.
+// @version      0.0.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT
@@ -18,7 +17,7 @@
 
     // Add language codes for favorite languages here.
     // Example: Use 'en' for the English Wikipedia https://en.wikipedia.org
-    // For a list of Wikipedia language see: https://en.wikipedia.org/wiki/List_of_Wikipedias
+    // For a list of Wikipedia languages see: https://en.wikipedia.org/wiki/List_of_Wikipedias
     var favoriteLanguages = ['en', 'de'];
 
     $(function() {
