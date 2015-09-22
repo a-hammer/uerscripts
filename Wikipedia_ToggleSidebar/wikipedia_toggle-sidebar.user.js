@@ -33,14 +33,14 @@
 
     // Waits for an element with id to arrive. Disconnects after found.
     HTMLElement.prototype.arriveById = function(id, callback) {
-        new MutationObserver(function check(mutations, observer) {
+        function check(mutations, observer) {
             var wanted = document.getElementById(id);
             if (wanted) {
                 observer.disconnect();
                 callback.call(wanted, wanted);
             }
-        })
-        .observe(this, { childList: true, subtree: true });
+        }
+        new MutationObserver(check).observe(this, { childList: true, subtree: true });
         return this;
     };
 
