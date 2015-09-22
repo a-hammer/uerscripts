@@ -9,6 +9,7 @@
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
 // @match        http*://*.wikipedia.org/wiki/*
+// @run-at       document-body
 // @grant        none
 // ==/UserScript==
 
@@ -19,25 +20,39 @@
     // For a list of Wikipedia languages see: https://en.wikipedia.org/wiki/List_of_Wikipedias
     var languages = ['en', 'de'];
 
-    var list = document.createElement('ul');
 
-    list.style.listStyle = 'none';
-    list.style.fontSize = '12px';
-    list.style.marginLeft = '0px';
-    list.style.marginBottom = '12px';
+    // Make room for the languages in heading's margin.
+    // Avoids shifting main content down when they are inserted later.
+    insertCSSRule('#firstHeading { margin-top: 22px; }');
 
-    for (var i = 0; i < languages.length; i++) {
-        var lang = document.querySelectorAll('.interlanguage-link.interwiki-' + languages[i])[0];
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var list = document.createElement('ul');
 
-        if (lang) {
-            lang = lang.cloneNode(true);
-            lang.style.display = 'inline';
-            lang.style.marginRight = '8px';
-            list.appendChild(lang);
+        list.style.listStyle = 'none';
+        list.style.fontSize = '12px';
+        list.style.marginLeft = '0px';
+        list.style.marginBottom = '-18px'; // Clear additional space from above
+
+        for (var i = 0; i < languages.length; i++) {
+            var lang = document.querySelectorAll('.interlanguage-link.interwiki-' + languages[i])[0];
+
+            if (lang) {
+                lang = lang.cloneNode(true);
+                lang.style.display = 'inline';
+                lang.style.marginRight = '8px';
+                list.appendChild(lang);
+            }
         }
-    }
 
-    var heading = document.getElementById('firstHeading');
-    if (heading && list.childElementCount > 0) heading.parentElement.insertBefore(list, heading);
+        var heading = document.getElementById('firstHeading');
+        if (heading && list.childElementCount > 0) heading.parentElement.insertBefore(list, heading);
+
+    });
+
+    function insertCSSRule(rule) {
+        var style = document.createElement('style');
+        document.head.appendChild(style);
+        style.sheet.insertRule(rule, 0);
+    }
 
 })();
