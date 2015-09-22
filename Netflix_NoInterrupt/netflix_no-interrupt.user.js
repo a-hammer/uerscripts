@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         Netflix - Don't Interrupt
-// @description  Clicks the "continue watching" button whenever it appears.
+// @name         Netflix - No Interrupt
+// @description  Automatically clicks the "continue playing" button whenever it appears.
 // @version      0.0.1
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer

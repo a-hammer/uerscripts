@@ -25,7 +25,7 @@
     // Avoids shifting main content down when they are inserted later.
     insertCSSRule('#firstHeading { margin-top: 22px; }');
 
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener('DOMContentLoaded', function() {
         var list = document.createElement('ul');
 
         list.style.listStyle = 'none';
