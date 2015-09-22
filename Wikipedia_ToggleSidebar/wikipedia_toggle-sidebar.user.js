@@ -9,27 +9,27 @@
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
 // @match        *.wikipedia.org/wiki/*
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
 // @run-at       document-body
 // @grant        none
 // ==/UserScript==
 
-(function($) {
+(function() {
 
     var prefs = {
         hiddenByDefault: true
     };
 
-    $.fn.rotate = function(degrees) {
+    function rotate(element, degrees) {
         var rotation = 'rotate(' + degrees + 'deg)';
-        $(this).css({
-            '-webkit-transform': rotation,
-            '-moz-transform':    rotation,
-            '-ms-transform':     rotation,
-            'transform':         rotation
-        });
-        return $(this);
-    };
+        element.style.WebkitTransform = rotation;
+        element.style.transform = rotation;
+    }
+
+    function addCSS(css) {
+        var style = document.createElement('style');
+        style.textContent = css;
+        document.head.appendChild(style);
+    }
 
     var css = '\
         body { \
@@ -60,40 +60,36 @@
             opacity: 0.5; \
             cursor: pointer; \
             transition: all 0.1s; \
-        }';
+        } \
+        #sidebar-toggle:hover { \
+            font-size: 23px; \
+            opacity: 1; \
+            top: -2px; \
+        } \
+    ';
 
-    $('head').append('<style>' + css + '</style>');
+    addCSS(css);
 
-    $(document).ready(function() {
-        var sidebarToggle = $('<div id="sidebar-toggle" title="Toggle Sidebar">▸<div>'),
-            sidebar = $('#mw-panel'),
-            mainContent = $('#content');
+    document.addEventListener('DOMContentLoaded', function() {
+        var sidebarToggle = document.createElement('div'),
+            sidebar = document.getElementById('mw-panel'),
+            mainContent = document.getElementById('content');
 
-        sidebarToggle
-            .prependTo(document.body)
-            .click(function() {
-                $(this).rotate(mainContent.hasClass('with-sidebar') ? 0 : 90);
-                mainContent.toggleClass('with-sidebar');
-                sidebar.toggle();
-            })
-            .hover(
-                function() {
-                    $(this).animate({
-                        'font-size': '23px',
-                         top: -2,
-                         opacity: 1
-                     }, { duration: 20 });
-                },
-                function() {
-                    $(this).animate({
-                        'font-size': '20px',
-                         top: 0,
-                         opacity: 0.5
-                    }, { duration: 20 });
-                }
-            );
+        sidebar.style.display = 'none';  // Seems to be undefined initially
+
+        sidebarToggle.id = 'sidebar-toggle';
+        sidebarToggle.title = 'Toggle Sidebar';
+        sidebarToggle.textContent = '▸';
+
+        sidebarToggle.addEventListener('click', function() {
+            rotate(sidebarToggle, mainContent.classList.contains('with-sidebar') ? 0 : 90);
+            mainContent.classList.toggle('with-sidebar');
+            sidebar.style.display = (sidebar.style.display === 'none') ? 'block' : 'none';
+        });
 
         if (! prefs.hiddenByDefault) sidebarToggle.click();
+
+        document.body.insertBefore(sidebarToggle, document.body.firstElementChild);
     });
 
-})(jQuery.noConflict(true));
+})();
