@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Toggle Sidebar
 // @description  Adds a small button to hide or show the sidebar. Makes reading easier.
-// @version      0.1.2
+// @version      0.2.0
 // @author       Arthur Hammer
 // @namespace    https://github.com/a-hammer
 // @license      MIT
