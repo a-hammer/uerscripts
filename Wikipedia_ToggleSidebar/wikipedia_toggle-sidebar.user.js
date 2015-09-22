@@ -31,20 +31,7 @@
         return $(this);
     };
 
-    // Waits for an element with id to arrive. Disconnects after found.
-    HTMLElement.prototype.arriveById = function(id, callback) {
-        function check(mutations, observer) {
-            var wanted = document.getElementById(id);
-            if (wanted) {
-                observer.disconnect();
-                callback.call(wanted, wanted);
-            }
-        }
-        new MutationObserver(check).observe(this, { childList: true, subtree: true });
-        return this;
-    };
-
-    var css = ' \
+    var css = '\
         body { \
             background-color: white; \
         } \
@@ -52,9 +39,16 @@
             border-color: #ddd; \
             border-left-width: 0; \
         } \
-        #content.snap-left { \
+        #content { \
             margin-left: 5em;    /* TODO: smaller margin for smaller widths */ \
             margin-right: 5em; \
+        } \
+        #content.with-sidebar { \
+            margin-left: 10em; \
+            margin-right: 0em; \
+        } \
+        #mw-panel { \
+            display: none; \
         } \
         #sidebar-toggle { \
             position: absolute; \
@@ -66,43 +60,20 @@
             opacity: 0.5; \
             cursor: pointer; \
             transition: all 0.1s; \
-        } \
-        '
-    ;
+        }';
 
     $('head').append('<style>' + css + '</style>');
 
-    if (prefs.hiddenByDefault) {
-        // Hide as soon as elements arrive to avoid layout jumping
-        document.body
-            .arriveById('mw-panel', function() {
-                $(this).hide();
-            })
-            .arriveById('content', function() {
-                $(this).addClass('snap-left');
-            });
-    }
-
-    // Rest at document ready
     $(document).ready(function() {
         var sidebarToggle = $('<div id="sidebar-toggle" title="Toggle Sidebar">▸<div>'),
             sidebar = $('#mw-panel'),
             mainContent = $('#content');
 
-        // 'document.ready' can fire before 'arriveById'. Double-check.
-        if (prefs.hiddenByDefault) {
-            sidebar.hide();
-            mainContent.addClass('snap-left');
-        }
-        else {
-            sidebarToggle.rotate(90);
-        }
-
         sidebarToggle
             .prependTo(document.body)
             .click(function() {
-                $(this).rotate(mainContent.hasClass('snap-left') ? 90 : 0);
-                mainContent.toggleClass('snap-left');
+                $(this).rotate(mainContent.hasClass('with-sidebar') ? 0 : 90);
+                mainContent.toggleClass('with-sidebar');
                 sidebar.toggle();
             })
             .hover(
@@ -121,6 +92,8 @@
                     }, { duration: 20 });
                 }
             );
+
+        if (! prefs.hiddenByDefault) sidebarToggle.click();
     });
 
 })(jQuery.noConflict(true));
