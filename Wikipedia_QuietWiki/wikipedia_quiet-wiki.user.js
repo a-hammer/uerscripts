@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Wikipedia_QuietWiki
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        *.wikipedia.org/wiki/*
 // @exclude      *.wikipedia.org/wiki/Main_Page
 // @exclude      *.wikipedia.org/wiki/Wikipedia:Hauptseite

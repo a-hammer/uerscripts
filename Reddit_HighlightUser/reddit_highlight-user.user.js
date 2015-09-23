@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Reddit_HighlightUser
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        https://www.reddit.com/r/*/comments/*
 // @grant        none
 // ==/UserScript==

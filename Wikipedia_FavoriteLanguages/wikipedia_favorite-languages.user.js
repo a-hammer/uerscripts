@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/master/Wikipedia_FavoriteLanguages
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        http*://*.wikipedia.org/wiki/*
 // @run-at       document-body
 // @grant        none

@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Netflix_NoInterrupt
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Netflix_NoInterrupt/netflix_no-interrupt.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Netflix_NoInterrupt/netflix_no-interrupt.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        http*://www.netflix.com/*
 // @run-at       document-body
 // @grant        none

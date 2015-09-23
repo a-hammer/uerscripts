@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Google_UnhijackLinks
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Google_UnhijackLinks/google_unhijack-links.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Google_UnhijackLinks/google_unhijack-links.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        https://*.google.tld/*
 // @grant        none
 // ==/UserScript==

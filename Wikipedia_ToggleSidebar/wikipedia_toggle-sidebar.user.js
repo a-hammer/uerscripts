@@ -38,8 +38,6 @@
         #content { \
             border-color: #ddd; \
             border-left-width: 0; \
-        } \
-        #content { \
             margin-left: 5em;    /* TODO: smaller margin for smaller widths */ \
             margin-right: 5em; \
         } \

@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/HackerNews_HighlightUser
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        https://news.ycombinator.com/item?id=*
 // @grant        none
 // ==/UserScript==

@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Netflix_SpoilerSpoiler
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Netflix_SpoilerSpoiler/netflix_spoiler-spoiler.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Netflix_SpoilerSpoiler/netflix_spoiler-spoiler.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        http*://www.netflix.com/*
 // @run-at       document-body
 // @grant        none

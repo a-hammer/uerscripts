@@ -8,6 +8,7 @@
 // @homepage     https://github.com/a-hammer/userscripts/tree/master/Netflix_WhosWatching
 // @updateURL    https://github.com/a-hammer/userscripts/raw/master/Netflix_WhosWatching/netflix_whos-watching.user.js
 // @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Netflix_WhosWatching/netflix_whos-watching.user.js
+// @supportURL   https://github.com/a-hammer/userscripts/issues
 // @match        http*://www.netflix.com/*
 // @run-at       document-body
 // @grant        none
