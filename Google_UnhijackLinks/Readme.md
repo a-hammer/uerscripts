@@ -4,10 +4,12 @@ Disable Google replacing direct search result links with internal Google links. 
 
 **[Install here.](https://github.com/a-hammer/userscripts/raw/master/Google_UnhijackLinks/google_unhijack-links.user.js)**
 
-Before:
+---
+
+**Before**:
 
 ![](screenshot-before.jpg)
 
-After:
+**After**:
 
 ![](screenshot-after.jpg)

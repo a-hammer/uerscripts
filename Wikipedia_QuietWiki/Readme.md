@@ -6,10 +6,12 @@ Links are still there and can be clicked. Individual options can be set in the s
 
 **[Install here.](https://github.com/a-hammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js)**
 
-Before:
+---
+
+**Before**:
 
 ![](screenshot-before.jpg)
 
-After:
+**After**:
 
 ![](screenshot-after.jpg)
