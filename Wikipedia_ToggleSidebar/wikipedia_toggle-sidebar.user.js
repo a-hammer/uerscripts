@@ -3,11 +3,11 @@
 // @description  Adds a small button to hide or show the sidebar. Makes reading easier.
 // @version      0.2.0
 // @author       Arthur Hammer
-// @namespace    https://github.com/a-hammer
+// @namespace    https://github.com/arthurhammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/userscripts/tree/master/Wikipedia_ToggleSidebar
-// @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
-// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
+// @homepage     https://github.com/arthurhammer/userscripts/tree/master/Wikipedia_ToggleSidebar
+// @updateURL    https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
+// @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js
 // @match        *.wikipedia.org/wiki/*
 // @run-at       document-body
 // @grant        none

@@ -3,12 +3,12 @@
 // @description  When hovering over a user, highlights comments by the same user in the thread.
 // @version      0.0.1
 // @author       Arthur Hammer
-// @namespace    https://github.com/a-hammer
+// @namespace    https://github.com/arthurhammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/userscripts/tree/master/HackerNews_HighlightUser
-// @updateURL    https://github.com/a-hammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
-// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
-// @supportURL   https://github.com/a-hammer/userscripts/issues
+// @homepage     https://github.com/arthurhammer/userscripts/tree/master/HackerNews_HighlightUser
+// @updateURL    https://github.com/arthurhammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
+// @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/HackerNews_HighlightUser/hackernews-highlight-user.user.js
+// @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        https://news.ycombinator.com/item?id=*
 // @grant        none
 // ==/UserScript==

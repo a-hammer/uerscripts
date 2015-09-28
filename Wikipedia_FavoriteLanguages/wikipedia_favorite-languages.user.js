@@ -3,12 +3,12 @@
 // @description  Easily access Wikipedia pages in your favorite languages. Setup languages below.
 // @version      0.1.0
 // @author       Arthur Hammer
-// @namespace    https://github.com/a-hammer
+// @namespace    https://github.com/arthurhammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/userscripts/master/Wikipedia_FavoriteLanguages
-// @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
-// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
-// @supportURL   https://github.com/a-hammer/userscripts/issues
+// @homepage     https://github.com/arthurhammer/userscripts/master/Wikipedia_FavoriteLanguages
+// @updateURL    https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
+// @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
+// @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        http*://*.wikipedia.org/wiki/*
 // @run-at       document-body
 // @grant        none

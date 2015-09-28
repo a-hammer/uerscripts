@@ -3,12 +3,12 @@
 // @description  When hovering over a user, highlights that user's comments in the thread.
 // @version      0.0.1
 // @author       Arthur Hammer
-// @namespace    https://github.com/a-hammer
+// @namespace    https://github.com/arthurhammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/userscripts/tree/master/Reddit_HighlightUser
-// @updateURL    https://github.com/a-hammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
-// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
-// @supportURL   https://github.com/a-hammer/userscripts/issues
+// @homepage     https://github.com/arthurhammer/userscripts/tree/master/Reddit_HighlightUser
+// @updateURL    https://github.com/arthurhammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
+// @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Reddit_HighlightUser/reddit-highlight-user.user.js
+// @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        https://www.reddit.com/r/*/comments/*
 // @grant        none
 // ==/UserScript==
