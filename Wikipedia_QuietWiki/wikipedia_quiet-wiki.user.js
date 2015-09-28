@@ -3,12 +3,12 @@
 // @description  Makes links stand out less in Wiki articles. Useful if you fall into rabbit holes when you just wanted to focus on a single article.
 // @version      0.1.0
 // @author       Arthur Hammer
-// @namespace    https://github.com/a-hammer
+// @namespace    https://github.com/arthurhammer
 // @license      MIT
-// @homepage     https://github.com/a-hammer/userscripts/tree/master/Wikipedia_QuietWiki
-// @updateURL    https://github.com/a-hammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
-// @downloadURL  https://github.com/a-hammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
-// @supportURL   https://github.com/a-hammer/userscripts/issues
+// @homepage     https://github.com/arthurhammer/userscripts/tree/master/Wikipedia_QuietWiki
+// @updateURL    https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
+// @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_QuietWiki/wikipedia_quiet-wiki.user.js
+// @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        *.wikipedia.org/wiki/*
 // @exclude      *.wikipedia.org/wiki/Main_Page
 // @exclude      *.wikipedia.org/wiki/Wikipedia:Hauptseite

@@ -1,11 +1,9 @@
-# Netflix - Who's Watching
+## Netflix - Who's Watching
 
-Skips the profile-chooser page by automatically clicking a specific profile.
+Skips the profile-chooser page by automatically clicking a specific profile on Netflix.
 
-Useful if you share a Netflix account but only ever use a single profile on a specific device.
+Useful if you share an account but only ever use a single profile on a specific device.
 
-Choose the profile to use in the script.
+🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/Netflix_WhosWatching/netflix_whos-watching.user.js)**.
 
-**[Install here](https://github.com/a-hammer/userscripts/raw/master/Netflix_WhosWatching/netflix_whos-watching.user.js)**.
-
-![](screenshot.jpg)
+![Screenshot](screenshot.jpg)

@@ -1,7 +1,7 @@
-# Netflix - No Interrupt
+## Netflix - No Interrupt
 
-Automatically clicks the "continue playing" button whenever it appears.
+Automatically clicks the "continue playing" button whenever it appears on Netflix.
 
-**[Install here](https://github.com/a-hammer/userscripts/raw/master/Netflix_NoInterrupt/netflix_no-interrupt.user.js)**.
+🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/Netflix_NoInterrupt/netflix_no-interrupt.user.js)**.
 
-![](screenshot.jpg)
+![Screenshot](screenshot.jpg)

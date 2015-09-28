@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Netflix - Who's Watching
-// @description  Skips the profile-chooser page by automatically clicking a specific profile. Set up the profile to use below.
+// @description  Skips the profile-chooser page by automatically clicking a specific profile on Netflix. Set up the profile to use in the script.
 // @version      0.0.1
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer

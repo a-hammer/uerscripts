@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hacker News - Highlight User
-// @description  When hovering over a user, highlights comments by the same user in the thread.
+// @description  When hovering over a user, highlights comments by the same user in the thread. Makes following who said what easier.
 // @version      0.0.1
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer

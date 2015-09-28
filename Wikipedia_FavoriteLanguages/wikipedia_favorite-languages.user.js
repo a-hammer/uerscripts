@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Wikipedia - Favorite Languages
-// @description  Easily access Wikipedia pages in your favorite languages. Setup languages below.
+// @description  Easily access Wikipedia pages in your favorite languages. Setup languages to use in the script.
 // @version      0.1.0
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer

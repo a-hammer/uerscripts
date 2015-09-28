@@ -1,7 +1,7 @@
-# Wikipedia - Favorite Languages
+## Wikipedia - Favorite Languages
 
 Easily access Wikipedia pages in your favorite languages.
 
-**[Install here](https://github.com/a-hammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js)**.
+🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js)**.
 
-![](screenshot.jpg)
+![Screenshot](screenshot.png)

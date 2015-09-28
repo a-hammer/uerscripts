@@ -1,9 +1,9 @@
-# Wikipedia - Toggle Sidebar
+## Wikipedia - Toggle Sidebar
 
 Adds a small button to hide or show the sidebar. Makes reading easier.
 
-Sidebar is hidden by default. This can be changed in the preferences.
+Sidebar is hidden by default.
 
-**[Install here](https://github.com/a-hammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js)**.
+🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_ToggleSidebar/wikipedia_toggle-sidebar.user.js)**.
 
-![](screengif.gif)
+![Screenshot](screengif.gif)
