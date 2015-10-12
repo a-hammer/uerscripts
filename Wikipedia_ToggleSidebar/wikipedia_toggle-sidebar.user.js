@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Toggle Sidebar
 // @description  Adds a small button to hide or show the sidebar. Makes reading easier.
-// @version      0.2.1
+// @version      0.2.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer
 // @license      MIT
@@ -80,7 +80,7 @@
             rotate(sidebarToggle, mainContent.classList.contains('with-sidebar') ? 0 : 90);
             mainContent.classList.toggle('with-sidebar');
             sidebar.style.display =
-                (sidebar.style.display && sidebar.style.display === 'none') ? 'block' : 'none';
+                (!sidebar.style.display || sidebar.style.display === 'none') ? 'block' : 'none';
         });
 
         if (! prefs.hiddenByDefault) sidebarToggle.click();
