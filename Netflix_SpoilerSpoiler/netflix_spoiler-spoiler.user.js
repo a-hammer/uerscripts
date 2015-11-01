@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Netflix - Spoiler Spoiler
 // @description  Hides background spoiler images of upcoming episodes on Netflix. Works when loading an episode and when switching between episodes.
-// @version      0.0.1
+// @version      0.0.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer
 // @license      MIT
@@ -10,7 +10,7 @@
 // @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Netflix_SpoilerSpoiler/netflix_spoiler-spoiler.user.js
 // @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        http*://www.netflix.com/*
-// @run-at       document-body
+// @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
