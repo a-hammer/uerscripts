@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hacker News - Show All Comments
-// @description  On a comment detail page, adds a link back to the whole Hacker News thread
-// @version      0.0.2
+// @description  On comment detail pages, adds a link back to the whole Hacker News thread
+// @version      0.0.3
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer
 // @license      MIT
@@ -14,45 +14,58 @@
 
 (function() {
 
-  var parentLinkSelector = '.par a';
-  var allCommentsId = 'all-comments';
+  if (!setRootLink()) return;
 
-  var link = setAllCommentsLink({ status: 'loading…' });
-  if (!link) return;
-
-  getAllCommentsURL(document)
-    .then(function(url) {
-      setAllCommentsLink({ url: url });
-    })
+  getItem(pageItemId())
+    .then(getRootItem)
+    .then(setRootLink)
     .catch(function(err) {
-      console.log('Couldn\'t insert link to all comments page: ');
-      setAllCommentsLink({ status: 'failed loading' });
-  });
+      console.log(err);
+    });
 
-  function setAllCommentsLink(data) {
-    var parentLink = document.querySelector(parentLinkSelector);
-    if (!parentLink) return null;
-    var a = document.getElementById(allCommentsId);
+  function setRootLink(item) {
+    var id = 'all-comments';
+    var a = document.getElementById(id);
 
     if (!a) {
+      var target = '.par a';
+      var parentLink = document.querySelector(target);
+      if (!parentLink) return null; // Skip if alreay on root/main page
+
       a = document.createElement('a');
-      a.id = allCommentsId;
+      a.textContent = 'all comments';
+      a.id = id;
+
       parentLink.parentNode.appendChild(document.createTextNode(' | '));
       parentLink.parentNode.appendChild(a);
     }
 
-    a.textContent = 'all comments';
-    a.textContent += data.status ? (' (' + data.status + ')') : '';
-    if (data.url) a.href = data.url;
+    if (item) a.href = itemURL(item.id);
     return a;
   }
 
-  function getAllCommentsURL(document) { // make iterative?
-    var parentLink = document.querySelector(parentLinkSelector);
+  function getRootItem(item) { // make iterative?
+    if (!item) return null;
 
-    return (parentLink && parentLink.href)
-      ? request(parentLink.href).then(getAllCommentsURL)
-      : Promise.resolve(document.URL);
+    return item.parent
+      ? getItem(item.parent)
+          .then(getRootItem)
+      : Promise.resolve(item);
+  }
+
+  function getItem(id) {
+    var endpoint = 'https://hacker-news.firebaseio.com/v0/item/{id}.json';
+    return request(endpoint.replace('{id}', id));
+  }
+
+  function itemURL(id) {
+    var url = 'https://news.ycombinator.com/item?id={id}'
+    return url.replace('{id}', id);
+  }
+
+  function pageItemId() {
+    var re = /news\.ycombinator\.com\/item\?id=(\d+)/;
+    return re.exec(document.URL)[1];
   }
 
   function request(url) {
@@ -60,7 +73,7 @@
       var method = 'GET';
       var xhr = new XMLHttpRequest();
 
-      xhr.responseType = 'document';
+      xhr.responseType = 'json';
       xhr.open(method, url);
 
       xhr.onerror = function() {
