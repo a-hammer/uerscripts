@@ -1,12 +1,8 @@
 ## Hacker News - Show All Comments
 
-On a comment detail page, adds a link back to the whole Hacker News thread.
+On comment detail pages, adds a link back to the whole Hacker News thread.
 
----
-
-When on a comment detail page on Hacker News, there is no way to get back to all other comments in the thread. You can only reach the immediate parent. This is especially clunky if you land on a deep comment from a Google search and want to see the remaining thread.
-
-Note: It might take a second or two for the link to appear (the script has to traverse all parent comment pages itself).
+On Hacker News, there is no easy way to get back to the remaining thread from a comment page. This can be clunky if you land on a deep comment (e.g. from a Google search) and want to see all other comments.
 
 🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/HackerNews_ShowAllComments/hackernews_show-all-comments.user.js)**.
 
