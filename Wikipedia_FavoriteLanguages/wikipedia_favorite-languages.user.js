@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Favorite Languages
-// @description  Easily access Wikipedia pages in your favorite languages. Setup languages to use in the script.
-// @version      0.1.0
+// @description  Easily access Wikipedia pages in your favorite languages. Setup languages below.
+// @version      0.1.2
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer
 // @license      MIT
@@ -10,50 +10,64 @@
 // @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Wikipedia_FavoriteLanguages/wikipedia_favorite-languages.user.js
 // @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        http*://*.wikipedia.org/wiki/*
-// @run-at       document-body
+// @run-at       document-start
 // @grant        none
 // ==/UserScript==
 
 (function() {
 
-    // Add language codes for favorite languages here.
-    // Example: Use 'en' for the English Wikipedia https://en.wikipedia.org
-    // For a list of Wikipedia languages see: https://en.wikipedia.org/wiki/List_of_Wikipedias
-    var languages = ['en', 'de'];
+  // Add language codes for favorite languages here.
+  // Example: Use 'en' for the English Wikipedia https://en.wikipedia.org
+  // For a list of Wikipedia languages see: https://en.wikipedia.org/wiki/List_of_Wikipedias
+  var languages = ['en', 'de'];
 
+  var languageSelectorPrefix = '.interlanguage-link.interwiki-';
 
-    // Make room for the languages in heading's margin.
-    // Avoids shifting main content down when they are inserted later.
-    insertCSSRule('#firstHeading { margin-top: 22px; }');
+  // Makes room before main heading to avoid layout jumping during load
+  var css =
+    '#firstHeading {        \
+      margin-top: 22px;     \
+    }                       \
+    #fav-langs {            \
+      list-style: none;     \
+      font-size: 12px;      \
+      margin-left: 0px;     \
+      margin-bottom: -18px; \
+    }                       \
+    .fav-lang {             \
+      display: inline;      \
+      margin-right: 8px;    \
+    }';
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var list = document.createElement('ul');
+  addCSS(css);
+  addFavLanguages();
+  document.addEventListener('DOMContentLoaded', addFavLanguages);
 
-        list.style.listStyle = 'none';
-        list.style.fontSize = '12px';
-        list.style.marginLeft = '0px';
-        list.style.marginBottom = '-18px'; // Clear additional space from above
+  function addFavLanguages() {
+    if (!document.body || document.getElementById('fav-langs')) return;
 
-        for (var i = 0; i < languages.length; i++) {
-            var lang = document.querySelectorAll('.interlanguage-link.interwiki-' + languages[i])[0];
+    var heading = document.getElementById('firstHeading');
+    var langList = document.createElement('ul');
+    langList.id = 'fav-langs';
 
-            if (lang) {
-                lang = lang.cloneNode(true);
-                lang.style.display = 'inline';
-                lang.style.marginRight = '8px';
-                list.appendChild(lang);
-            }
-        }
-
-        var heading = document.getElementById('firstHeading');
-        if (heading && list.childElementCount > 0) heading.parentElement.insertBefore(list, heading);
-
+    languages.forEach(function(language) {
+      var langElement = document.querySelector(languageSelectorPrefix + language);
+      if (langElement) {
+        langElement = langElement.cloneNode(true);
+        langElement.classList.add('fav-lang');
+        langList.appendChild(langElement);
+      }
     });
 
-    function insertCSSRule(rule) {
-        var style = document.createElement('style');
-        document.head.appendChild(style);
-        style.sheet.insertRule(rule, 0);
+    if (heading && langList.childElementCount > 0) {
+      heading.parentElement.insertBefore(langList, heading);
     }
+  }
+
+  function addCSS(css) {
+    var style = document.createElement('style');
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
 
 })();
