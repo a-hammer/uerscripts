@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Wikipedia - Quiet Wiki
 // @description  Makes links stand out less in Wiki articles. Useful if you fall into rabbit holes when you just wanted to focus on a single article.
-// @version      0.1.0
+// @version      0.1.1
 // @author       Arthur Hammer
 // @namespace    https://github.com/arthurhammer
 // @license      MIT
@@ -12,51 +12,59 @@
 // @match        *.wikipedia.org/wiki/*
 // @exclude      *.wikipedia.org/wiki/Main_Page
 // @exclude      *.wikipedia.org/wiki/Wikipedia:Hauptseite
-// @run-at       document-body
+// @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
 // Note: Besides articles, currently applies to most almost every page on Wikipedia (e.g. discussion pages, portals).
 
+// Example test page: https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_370
+
 (function() {
 
-    // Changes do not remove links completely. They are still clickable.
-    var config = {
-        removeLinkColor:     true,   // Make links black
-        removeLinkUnderline: true,   // Remove underline when hovering on links
-        removeLinkCursor:    false,  // Make pointer cursor when hovering links to default cursor
-        smallCitations:      true,   // Make '[1][23][45]' citations to '1 23 45'
-        removeCitations:     false,  // Remove citations completely
-        removeEditing:       true    // Remove '[edit]' on headings
-    };
+  var selectors = {
+    link: '#mw-content-text a:link, #mw-content-text a:visited, #mw-content-text a:active, #mw-content-text a:hover',
+    cite: '#mw-content-text .reference',
+    edit: '.mw-editsection'
+  }
 
-    var css = styleSheet(),
-        links = '#mw-content-text a:link, #mw-content-text a:visited, #mw-content-text a:active, #mw-content-text a:hover',
-        citations = '#mw-content-text .reference';
+  var config = {
+    removeLinkColor:     true,   // Make links black
+    removeLinkUnderline: true,   // Remove underline when hovering on links
+    removeLinkCursor:    false,  // Make pointer cursor when hovering links to default cursor
+    smallCitations:      true,   // Make '[1][23][45]' citations to '1 23 45'
+    removeCitations:     false,  // Remove citations completely
+    removeEditing:       true    // Remove '[edit]' on headings
+  };
 
-    var rules = {
-        removeLinkColor:      links + ' { color: inherit; }',
-        removeLinkUnderline:  links + ' { text-decoration: none; }',
-        removeLinkCursor:     links + ' { cursor: text; }',
-        smallCitations:      [citations + ' span:nth-of-type(1) { display: none; }',
-                              citations + ' span:nth-of-type(2) { visibility: hidden; }'],
-        removeCitations:      citations + ' { display: none; }',
-        removeEditing:        '.mw-editsection { display: none }'
-    };
+  var rules = {
+    removeLinkColor:      selectors.link + ' { color: inherit; }',
+    removeLinkUnderline:  selectors.link + ' { text-decoration: none; }',
+    removeLinkCursor:     selectors.link + ' { cursor: text; }',
+    smallCitations:       function() {
+      var a = document.querySelectorAll(selectors.cite + ' > a');
+      for (var i = 0; i < a.length; i++) {
+        a[i].textContent = a[i].textContent.replace(/\[/g, ' ').replace(/\]/g, '');
+      }
+    },
+    removeCitations:      selectors.cite + ' { display: none; }',
+    removeEditing:        selectors.edit + ' { display: none }'
+  };
 
-    for (var c in config) {
-        if (config[c]) {
-            if (Array.isArray(rules[c])) {
-                rules[c].forEach(function(rule) { css.insertRule(rule, 0); });
-            }
-            else css.insertRule(rules[c], 0);
-        }
+  var sheet = styleSheet();
+
+  for (var key in config) {
+    if (config[key]) {
+      var rule = rules[key];
+      if (typeof rule === 'string') sheet.insertRule(rule, 0);
+      else rule();
     }
+  }
 
-    function styleSheet() {
-        var style = document.createElement('style');
-        document.head.appendChild(style);
-        return style.sheet;
-    }
+  function styleSheet() {
+    var style = document.createElement('style');
+    document.head.appendChild(style);
+    return style.sheet;
+  }
 
 })();
