@@ -10,7 +10,7 @@
 // @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/YouTube_ToggleComments/youtube_toggle-comments.user.js
 // @supportURL   https://github.com/arthurhammer/userscripts/issues
 // @match        https://www.youtube.com/watch?v=*
-// @run-at       document-end
+// @run-at       document-body
 // @grant        none
 // @noframes
 // ==/UserScript==
@@ -48,9 +48,10 @@
   }
 
   function addToggleButton(target) {
-    if (window.self !== window.top) return;
+    var button = document.getElementById(config.buttonId);
+    if (button) return;
 
-    var button = document.createElement('button');
+    button = document.createElement('button');
     button.id = config.buttonId;
     button.textContent = 'Show Less';
     button.addEventListener('click', function(e) {
@@ -68,14 +69,12 @@
 
   var observer = new MutationObserver(function() {
     var commentsHeader = document.getElementsByClassName(config.commentsHeaderClass)[0];
-
     if (commentsHeader) {
-      observer.disconnect();
-      addCSS(config.css);
       addToggleButton(commentsHeader);
     }
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
+  addCSS(config.css);
 
 })();
