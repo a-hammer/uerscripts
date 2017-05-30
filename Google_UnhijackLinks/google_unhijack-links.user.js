@@ -9,6 +9,7 @@
 // @updateURL    https://github.com/arthurhammer/userscripts/raw/master/Google_UnhijackLinks/google_unhijack-links.user.js
 // @downloadURL  https://github.com/arthurhammer/userscripts/raw/master/Google_UnhijackLinks/google_unhijack-links.user.js
 // @supportURL   https://github.com/arthurhammer/userscripts/issues
+// @noframes
 // @match        https://*.google.com/*
 // @match        https://*.google.ad/*
 // @match        https://*.google.ae/*

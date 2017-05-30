@@ -1,7 +1,9 @@
 ## Hacker News - Collapse Comments
 
-Adds buttons to collapse and expand comments.
+Adds buttons to collapse and expand comment trees.
 
-🚀 **[Install userscript](https://github.com/arthurhammer/userscripts/raw/master/HackerNews_CollapseComments/hackernews_collapse-comments.user.js)**.
+🚀 **[Install userscript](https://github.com/arthurhammer/hackernews-collapse/raw/master/hackernews-collapse.user.js)**.
+
+This is also available as a browser extension for Safari. The [code for userscript and extension lives here](https://github.com/arthurhammer/hackernews-collapse).
 
 ![Screenshot](screenshot.png)
